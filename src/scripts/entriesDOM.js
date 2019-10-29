@@ -3,6 +3,8 @@
 
     Arguments: entries (array of objects)
 */
+
+// Import statement so entryManager can be accessed
 import entryManager from "./entryComponent.js"
 
 
