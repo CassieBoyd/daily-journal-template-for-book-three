@@ -14,12 +14,37 @@ API.getJournalEntries()
     .then(response => renderDom.renderJournalEntries(response))
 
 const addToApi = event => {
+// Invoke the factory function, passing along the form field values
+const newJournalEntry = buildEntry()
+console.log(newJournalEntry)
 
-    const concept = document.querySelector("concept-input").value
-    const entry = document.querySelector("entry-input").value
-    const mood = document.querySelector("mood-input").value
-    const dateField = document.querySelector("date-input").value
+// Use `fetch` with the POST method to add your entry to your API
+fetch("http://localhost:3000/entries", { // Replace "url" with your API's URL
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newJournalEntry)
+}).then(()=> {
+    API.getJournalEntries()
+    .then(response => renderDom.renderJournalEntries(response))
+})
 }
+// Factory function for returning an object
+ const buildEntry = () => {
+    const concept = document.querySelector("#concept-input").value
+    const entry = document.querySelector("#entry-input").value
+    const mood = document.querySelector(".mood").value
+    const dateField = document.querySelector("#date-input").value 
+console.log(concept, entry, mood, dateField)
+return {
+    "concept": concept,
+    "entry": entry,
+    "mood": mood,
+    "dateField": dateField
+}
+
+ }
 
 const attachEventListenerToEntryButton = () => {
 
@@ -29,3 +54,5 @@ const attachEventListenerToEntryButton = () => {
      // Listens for a click on the button tag.
     entryButton.addEventListener("click", addToApi)
     }
+
+    attachEventListenerToEntryButton()
