@@ -18,18 +18,18 @@ const renderDom = {
     const logArticle = document.querySelector(".entryLog")
     logArticle.innerHTML = HtmlForAllEntries
   },
-  // Factory function for returning an object
+  // Factory function for returning an object. 
   buildEntry () {
     const concept = document.querySelector("#concept-input").value
     const entry = document.querySelector("#entry-input").value
     const mood = document.querySelector(".mood").value
-    const dateField = document.querySelector("#date-input").value
-    console.log(concept, entry, mood, dateField)
+    const date = document.querySelector("#date-input").value
+    console.log(concept, entry, mood, date)
     return {
       "concept": concept,
       "entry": entry,
       "mood": mood,
-      "dateField": dateField
+      "date": date
     }
 
   }

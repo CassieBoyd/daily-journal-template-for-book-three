@@ -1,18 +1,13 @@
 // Import statements to allow access to modules 
 import API from "./api.js"
 import renderDom from "./entriesDOM.js"
-// import entryManager from "./entryComponent.js"
+import eventListener from "./eventListener.js"
 
-// Calling getJournalEntries from api.js
+// Calling getJournalEntries method on API object from api.js
 API.getJournalEntries()
 
-// .then waits for getJournalEntries to resolve then sends the JSON response to renderDom me where renderJournalEntries 
+// .then waits for getJournalEntries to resolve then sends the JSON response to renderDom where it's passed into renderJournalEntries 
     .then(response => renderDom.renderJournalEntries(response))
 
-// const addToApi = event => {
-// // Invoke the factory function, passing along the form field values
-// const newJournalEntry = buildEntry()
-// console.log(newJournalEntry)
-
-
-    attachEventListenerToEntryButton()
+// 
+    eventListener.attachEventListenerToEntryButton()

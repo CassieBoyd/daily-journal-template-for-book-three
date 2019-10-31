@@ -1,3 +1,5 @@
+import renderDom from "./entriesDOM.js"
+
 // Function definition
 const API = {
   getJournalEntries() {
@@ -18,10 +20,10 @@ const API = {
       },
       body: JSON.stringify(newJournalEntry)
     })
-    // .then(() => {
-    //   API.getJournalEntries()
-    //     .then(response => renderDom.renderJournalEntries(response))
-    // })
+    .then(() => {
+      API.getJournalEntries()
+        .then(response => renderDom.renderJournalEntries(response))
+    })
   }
 }
 
