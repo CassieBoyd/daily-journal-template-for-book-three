@@ -13,18 +13,20 @@
 
     <h1>Daily Journal</h1>
 
+
+    <!-- Only form elements with a name attribute will have their values passed when submitting a form. -->
     <form>
         <fieldset>
             <label for="date-input">Date of entry</label>
-            <input type="date" name="date-input">
+            <input type="date" name="date-input" id="date-input">
         </fieldset>
         <fieldset>
             <label for="concept-input">Concepts covered</label>
-            <input type="text" name="concept-input">
+            <input type="text" name="concept-input" id="concept-input">
         </fieldset>
         <fieldset>
             <label for="entry-input">Journal entry</label>
-            <textarea name="entry-input"></textarea>
+            <textarea name="entry-input" id="entry-input"></textarea>
         </fieldset>
         <fieldset>
             <label for="mood-input">Mood</label>
@@ -34,14 +36,14 @@
                 <option value="Ok">Ok</option>
             </select>
         </fieldset>
-        <button>Record Journal Entry</button>
     </form>
+    <button type="submit">Record Journal Entry</button>
 
     <article class="entryLog">
 
     </article>
 
-    <script type ="module" src="./scripts/journal.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
 </body>
 
 </html>
