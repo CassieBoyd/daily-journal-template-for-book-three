@@ -14,3 +14,5 @@ API.getJournalEntries()
     eventListener.attachEventListenerToEntryButton()
 
     handleButtonEvent.buttonEventListener()
+
+    eventListener.attachEventListenerToEntryLog()

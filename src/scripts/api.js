@@ -43,6 +43,34 @@ const API = {
           document.querySelector("#date-input").value = ""        
         })
     })
+  },
+
+  // Fetch DELETEs deleteJournalEntry from the API and clears the input fields once the fetch call completes.
+  deleteJournalEntry(id) {
+    
+    // Use `fetch` with the DELETE method to remove the entry from the API
+    fetch(`http://localhost:3000/entries/${id}`, {  
+      
+    // DELETE method deletes data from the API.
+    method: "DELETE",
+
+      // Content-Type tells the API that the data is in JSON format.
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+
+    // .then waits for fetch call to complete then fetches the data again using getJournalEntries. This causes the deleted post to be removed from the DOM. Another .then targets the input fields and clears them out.
+    .then(() => {
+      API.getJournalEntries()
+        .then(response => renderDom.renderJournalEntries(response))
+        .then(()=> {
+          document.querySelector("#concept-input").value = ""        
+          document.querySelector("#entry-input").value = ""        
+          document.querySelector(".mood").value = ""        
+          document.querySelector("#date-input").value = ""        
+        })
+    })
   }
 }
 
