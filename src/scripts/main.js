@@ -2,6 +2,7 @@
 import API from "./api.js"
 import renderDom from "./entriesDOM.js"
 import eventListener from "./eventListener.js"
+import handleButtonEvent from "./radioButtonManager.js"
 
 // Calling getJournalEntries method on API object from api.js
 API.getJournalEntries()
@@ -11,3 +12,5 @@ API.getJournalEntries()
 
 // Calling attachEventListenerToEntryButton
     eventListener.attachEventListenerToEntryButton()
+
+    handleButtonEvent.buttonEventListener()

@@ -31,10 +31,19 @@
         <fieldset>
             <label for="mood-input">Mood</label>
             <select class="mood" name="mood-input">
-                <option value="Amazing">Amazing</option>
-                <option value="Great">Great</option>
-                <option value="Ok">Ok</option>
+                <option value="Tired">Tired</option>
+                <option value="Ennui">Ennui</option>
+                <option value="Ok">Just Ok</option>
             </select>
+        </fieldset>
+        <fieldset>
+            <legend>Filter Journal Entries by Mood</legend>
+            <input id="Tired" name="Button" type="radio">
+            <label for="Tired">Tired</label>
+            <input id="Ennui" name="Button" type="radio">
+            <label for="Ennui">Ennui</label>
+            <input id="Ok" name="Button" type="radio">
+            <label for="Ok">Ok</label>
         </fieldset>
     </form>
     <button type="submit">Record Journal Entry</button>
