@@ -1,11 +1,13 @@
 import renderDom from "./entriesDOM.js"
 import API from "./api.js"
 
+
 const eventListener = {
+    // =================LISTEN FOR NEW JOURNAL ENTRY======================
     addToApi() {
         // Invoke the factory function, passing along the form field values to
         const newJournalEntry = renderDom.buildEntry()
-        console.log("newJournalEntry", newJournalEntry)
+        // console.log("newJournalEntry", newJournalEntry)
         API.postJournalEntry(newJournalEntry)
     },
     attachEventListenerToEntryButton() {
@@ -17,6 +19,8 @@ const eventListener = {
         entryButton.addEventListener("click", this.addToApi)
 
     },
+
+    // ================LISTEN FOR EDIT OR DELETE===========================
     attachEventListenerToEntryLog() {
 
         // DOM is searched for tag with class of entryLog and assigns it to a variable.
@@ -42,12 +46,23 @@ const eventListener = {
                     .then((response) => {
                         // console.log(response)
 
+                        // Dot notation is used on "response" to get the values of the indicated keys. That value is then assigned to the appropriate tag on the DOM. This populates the form with the entry that needs to be edited.
                         document.querySelector("#concept-input").value = response.concept
                         document.querySelector("#entry-input").value = response.entry
                         document.querySelector(".mood").value = response.mood
                         document.querySelector("#date-input").value = response.date
                     })
+
+                    // After form populates, .scrollTop scrolls to the top of the page where the form is.
+                    .then(document.documentElement.scrollTop = 0)
             }
+        })
+    },
+    // =====================LISTEN FOR SAVE=============================
+    attachEventListenerToSaveButton() {
+        const saveButton = document.querySelector("#save")
+        saveButton.addEventListener("click", () => {
+            console.log(event)
         })
     }
 }

@@ -2,7 +2,7 @@ import renderDom from "./entriesDOM.js"
 
 // API module, an object containing functions which are called methods when they're inside an object because why not?
 const API = {
-
+// ===============================GET ALL===================================
   // Fetch GETs all journal entries from the API and converts them to JSON. Called on main.js
   getJournalEntries() {
 
@@ -13,7 +13,7 @@ const API = {
       .then(response => response.json())
     // .then(response => console.log(response))
   },
-
+// =========================POST NEW=====================================
   // Fetch POSTs newJournalEntry to the API and clears the input fields once the fetch call completes.
   postJournalEntry(newJournalEntry) {
     
@@ -44,7 +44,7 @@ const API = {
         })
     })
   },
-
+// ==========================DELETE ENTRY==================================
   // Fetch DELETEs deleteJournalEntry from the API and clears the input fields once the fetch call completes.
   deleteJournalEntry(id) {
     
@@ -72,7 +72,7 @@ const API = {
         })
     })
   },
-
+// ============================EDIT ENTRY==================================
   editJournalEntry(id) {
 
     // fetch does a GET call to get back data of the entry with a matching id.

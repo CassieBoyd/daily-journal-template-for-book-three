@@ -1,7 +1,7 @@
 const entryManager = {
 
+  // =======================MAKE ENTRY=================================
   makeJournalEntryComponent(journalEntry) {
-    // Create your own HTML structure for a journal entry
     return `
     <fieldset>
       <section>
