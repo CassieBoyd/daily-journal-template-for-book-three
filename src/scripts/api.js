@@ -71,6 +71,16 @@ const API = {
           document.querySelector("#date-input").value = ""        
         })
     })
+  },
+
+  editJournalEntry(id) {
+
+    // fetch does a GET call to get back data of the entry with a matching id.
+    return fetch(`http://localhost:3000/entries/${id}`)
+
+      // .then waits for the fetch call to complete then converts the data (response) into JSON format.
+      .then(response => response.json())
+    // .then(response => console.log(response))
   }
 }
 
