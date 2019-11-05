@@ -2,55 +2,52 @@
   "entries": [
     {
       "id": 1,
-      "date": "07/24/2018",
+      "date": "2018-07-04",
       "concept": "Array methods",
       "entry": "We learned about 4 different array methods today. forEach made sense, but the others still confuse me.",
       "mood": "Ok"
     },
     {
       "id": 2,
-      "date": "08/02/2018",
+      "date": "2018-08-02",
       "concept": "Fetch calls",
       "entry": "How to get data from an API",
-      "mood": "Just Ok"
+      "mood": "Ok"
     },
     {
       "id": 3,
-      "date": "07/07/2018",
+      "date": "2018-07-07",
       "concept": "CSS Selectors",
       "entry": "How to use classes and ids to apply CSS to elements on the DOM",
       "mood": "Tired"
     },
     {
-      "concept": "boooooo",
-      "entry": "gftk",
-      "mood": "Ok",
-      "dateField": "2019-10-15",
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "concept": "boooooo",
-      "entry": "wedwq",
-      "mood": "Amazing",
-      "date": "2019-10-23",
+      "concept": "Cats",
+      "entry": "I'll take a dozen",
+      "mood": "Tired",
+      "date": "2019-11-22",
       "id": 8
     },
     {
-      "concept": "boooooop",
-      "entry": "gkgkjg",
-      "mood": "Amazing",
-      "date": "2019-10-29",
+      "concept": "CRUD",
+      "entry": "What's in a name?",
+      "mood": "Ok",
+      "date": "2019-11-22",
       "id": 9
     },
     {
-      "concept": "segre",
-      "entry": "segweew",
-      "mood": "Amazing",
-      "date": "2019-11-13",
+      "concept": "Modules",
+      "entry": "Little boxes. Put all the emotions in them.",
+      "mood": "Tired",
+      "date": "2019-11-27",
       "id": 10
+    },
+    {
+      "concept": "API",
+      "entry": "Leave me alone to die.",
+      "mood": "Ennui",
+      "date": "2019-11-22",
+      "id": 11
     }
   ]
 }

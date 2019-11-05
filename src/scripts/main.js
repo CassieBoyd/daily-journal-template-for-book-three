@@ -10,9 +10,12 @@ API.getJournalEntries()
 // .then waits for getJournalEntries to resolve then sends the JSON response to renderDom where it's passed into renderJournalEntries 
     .then(response => renderDom.renderJournalEntries(response))
 
-// Calling attachEventListenerToEntryButton
+// Calling event listeners for various buttons
     eventListener.attachEventListenerToEntryButton()
 
     handleButtonEvent.buttonEventListener()
 
     eventListener.attachEventListenerToEntryLog()
+
+
+    
