@@ -52,11 +52,14 @@ const eventListener = {
                         document.querySelector("#entry-input").value = response.entry
                         document.querySelector(".mood").value = response.mood
                         document.querySelector("#date-input").value = response.date
+
                         // console.log(document.querySelector("#date-input").value)
                     })
 
                     // After form populates, .scrollTop scrolls to the top of the page where the form is.
                     .then(document.documentElement.scrollTop = 0)
+
+                    // .then calls attachEventListenerToSaveButton with eventId as an argument.
                     .then(() => {
                         eventListener.attachEventListenerToSaveButton(eventId)
                     })
@@ -64,6 +67,7 @@ const eventListener = {
         })
     },
     // =====================LISTEN FOR SAVE=============================
+    // 
     attachEventListenerToSaveButton(id) {
         const saveButton = document.querySelector("#save")
         saveButton.addEventListener("click", () => {
