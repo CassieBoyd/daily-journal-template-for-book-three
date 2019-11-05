@@ -67,16 +67,28 @@ const eventListener = {
         })
     },
     // =====================LISTEN FOR SAVE=============================
-    // 
+    // Event listener for save button, takes the id as a parameter
     attachEventListenerToSaveButton(id) {
+
+        // DOM is searched for tag with an id of "save" and assigns it to a variable.
         const saveButton = document.querySelector("#save")
+
+        // Event listener listens for click then executes a function.
         saveButton.addEventListener("click", () => {
             // console.log(event)
+
+            // editJournalEntry is called with "id" and a function call as parameters. 
             API.editJournalEntry(id, renderDom.buildEntry())
-                .then(API.getJournalEntries)
+            
+            // getJournalEntries is called to fetch all journal entries.
+            .then(API.getJournalEntries)
+
+            // renderJournalEntries is called on the response from the API call causing the updated entries to be diaplayed on the DOM. 
                 .then(response => {
                     renderDom.renderJournalEntries(response)
                 })
+
+                // The input fields are cleared
                 .then(() => {
                     document.querySelector("#concept-input").value = ""
                     document.querySelector("#entry-input").value = ""
