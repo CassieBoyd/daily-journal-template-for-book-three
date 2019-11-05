@@ -17,6 +17,5 @@ API.getJournalEntries()
 
     eventListener.attachEventListenerToEntryLog()
 
-    // eventListener.attachEventListenerToSaveButton()
 
     

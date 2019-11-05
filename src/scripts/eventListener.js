@@ -41,28 +41,44 @@ const eventListener = {
             } else if (event.target.id.split("--")[0] === "edit") {
                 // console.log(event.target.id.split("--"))
 
-                // editJournalEntry is called from api.js with the id of the API entry as an argument. See above "if" notes for further explanation.
-                API.editJournalEntry(event.target.id.split("--")[1])
+                const eventId = event.target.id.split("--")[1]
+                // getSingleEntry is called from api.js with the id of the API entry as an argument. See above "if" notes for further explanation.
+                API.getSingleEntry(eventId)
                     .then((response) => {
-                        // console.log(response)
+                        console.log(response)
 
                         // Dot notation is used on "response" to get the values of the indicated keys. That value is then assigned to the appropriate tag on the DOM. This populates the form with the entry that needs to be edited.
                         document.querySelector("#concept-input").value = response.concept
                         document.querySelector("#entry-input").value = response.entry
                         document.querySelector(".mood").value = response.mood
                         document.querySelector("#date-input").value = response.date
+                        // console.log(document.querySelector("#date-input").value)
                     })
 
                     // After form populates, .scrollTop scrolls to the top of the page where the form is.
                     .then(document.documentElement.scrollTop = 0)
+                    .then(() => {
+                        eventListener.attachEventListenerToSaveButton(eventId)
+                    })
             }
         })
     },
     // =====================LISTEN FOR SAVE=============================
-    attachEventListenerToSaveButton() {
+    attachEventListenerToSaveButton(id) {
         const saveButton = document.querySelector("#save")
         saveButton.addEventListener("click", () => {
-            console.log(event)
+            // console.log(event)
+            API.editJournalEntry(id, renderDom.buildEntry())
+                .then(API.getJournalEntries)
+                .then(response => {
+                    renderDom.renderJournalEntries(response)
+                })
+                .then(() => {
+                    document.querySelector("#concept-input").value = ""
+                    document.querySelector("#entry-input").value = ""
+                    document.querySelector(".mood").value = ""
+                    document.querySelector("#date-input").value = ""
+                })
         })
     }
 }
