@@ -7,7 +7,7 @@ const API = {
   getJournalEntries() {
     // fetch does a GET call to get back data
     return (
-      fetch("http://localhost:3000/entries")
+      fetch("http://localhost:8088/entries")
         // .then waits for the fetch call to complete then converts the data (response) into JSON format.
         .then(response => response.json())
     );
@@ -17,7 +17,7 @@ const API = {
   // Fetch POSTs newJournalEntry to the API and clears the input fields once the fetch call completes.
   postJournalEntry(newJournalEntry) {
     // Use `fetch` with the POST method to add your entry to your API
-    fetch("http://localhost:3000/entries", {
+    fetch("http://localhost:8088/entries", {
       // POST creates new data on the API.
       method: "POST",
 
@@ -45,7 +45,7 @@ const API = {
   // Fetch DELETEs deleteJournalEntry from the API and clears the input fields once the fetch call completes.
   deleteJournalEntry(id) {
     // Use `fetch` with the DELETE method to remove the entry from the API
-    fetch(`http://localhost:3000/entries/${id}`, {
+    fetch(`http://localhost:8088/entries/${id}`, {
       // DELETE method deletes data from the API.
       method: "DELETE",
 
@@ -70,7 +70,7 @@ const API = {
   editJournalEntry(id, editedJournalEntry) {
     // fetch does a GET call to get back data of the entry with a matching id.
     return (
-      fetch(`http://localhost:3000/entries/${id}`, {
+      fetch(`http://localhost:8088/entries/${id}`, {
         // PUT updates data on the API.
         method: "PUT",
 
@@ -91,7 +91,7 @@ const API = {
   getSingleEntry(id) {
     // fetch does a GET call to get back data
     return (
-      fetch(`http://localhost:3000/entries/${id}`)
+      fetch(`http://localhost:8088/entries/${id}`)
         // .then waits for the fetch call to complete then converts the data (response) into JSON format.
         .then(response => response.json())
     );
